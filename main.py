@@ -1,9 +1,9 @@
 import sqlite3 # database import
-# # Function to create a table
+# Function to create a table
 def create_table():
-    connection = sqlite3.connect("data.db")  # "conn" is a object which represent the connection to sqlite db file('items.db
+    connection = sqlite3.connect("data.db")  # "conn" is a object which represent the connection to sqlite db file("items.db")
     # cursor allows to interact the database by executing SQL queries.
-    cursor = connection.cursor()  #created curser object to connect with databases.
+    cursor = connection.cursor()  # created curser object to connect with databases.
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS items (
@@ -15,7 +15,7 @@ def create_table():
     connection.commit()
     connection.close()
 
-# Function to insert a new item
+# Function to insert a new item.
 def insert_item(name):
     connection = sqlite3.connect("data.db") # Connect to the database
     cursor = connection.cursor()
@@ -25,7 +25,7 @@ def insert_item(name):
     connection.commit()
     connection.close()
 
-# Function to read all items
+# Function to read all items.
 def read_items():
     connection = sqlite3.connect("data.db")
     cursor = connection.cursor()
@@ -37,7 +37,7 @@ def read_items():
 
     return items
 
-# Function to update an item
+# Function to update an item.
 def update_item(item_id, new_name):
     connection = sqlite3.connect("data.db")
     cursor = connection.cursor()
@@ -47,7 +47,7 @@ def update_item(item_id, new_name):
     connection.commit()
     connection.close()
 
-# Function to delete an item
+# Function to delete an item.
 def delete_item(item_id):
     connection = sqlite3.connect("data.db")
     cursor = connection.cursor()
@@ -57,7 +57,7 @@ def delete_item(item_id):
     connection.commit()
     connection.close()
 
-# Main function to interact with the user
+# Main function to interact with the user.
 if __name__ == "__main__":
     create_table() # Create a table to store items if it doesn't exist, each table is created with 2 parts "id" and "items"
 
